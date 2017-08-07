@@ -211,7 +211,7 @@ namespace RNFileSystem
         }
 
         [ReactMethod]
-        public async void readToFile(string relativePath, string storage, IPromise promise)
+        public async void readFile(string relativePath, string storage, IPromise promise)
         {
             if (relativePath == null)
             {
