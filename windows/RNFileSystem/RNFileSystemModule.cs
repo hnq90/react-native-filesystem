@@ -132,7 +132,7 @@ namespace RNFileSystem
             return rootFolder + "\\" + Regex.Replace(relativePath, "/", "\\");
         }
 
-        private async Task<string> readFile(string relativePath, Storage storage)
+        private async Task<string> readFromFile(string relativePath, Storage storage)
         {
             string baseDir = baseDirForStorage(storage);
 
@@ -221,7 +221,7 @@ namespace RNFileSystem
 
             try
             {
-                string content = await readFile(relativePath, (Storage)Enum.Parse(typeof(Storage), storage));
+                string content = await readFromFile(relativePath, (Storage)Enum.Parse(typeof(Storage), storage));
                 promise.Resolve(content);
             }
             catch (Exception ex)
